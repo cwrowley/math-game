@@ -23,8 +23,7 @@ class Player:
     def record_score(self, time):
         self.scores.append((datetime.now(), time))
 
-    def print_recent_scores(self):
-        num_scores = 10
+    def print_recent_scores(self, num_scores=10):
         for date, score in self.scores[-num_scores:]:
             print("%s: %.2f seconds" % (date.strftime("%b %d"), score))
 
@@ -139,6 +138,5 @@ print(highscores)
 save_scores(highscores)
 dump_player(player)
 
-if (False):
-    print("\nYour recent scores:")
-    player.print_recent_scores()
+print("\nYour recent scores:")
+player.print_recent_scores(5)
